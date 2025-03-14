@@ -1,0 +1,50 @@
+#DataModule args:
+batch_size: 32
+devices: [0]
+n_workers: 12
+in_memory: True
+val_sub: False
+
+return_zeros: True
+allow_padding: True
+input_processing:
+  - type: CountsPerX
+    key: "gene_counts"
+    factor: 1_000
+  
+
+# Transformer model args:
+discrete_input: False
+n_discrete_tokens: 29 # 50->9 , 100->13, 200->19, 500->29
+gate_input: False
+pseudoquant_input: False
+dim: 512
+depth: 10
+dropout: 0.2
+n_genes: 19331
+
+
+# Pre-training args:
+lr: 1e-3
+loss:
+  type: CountMSE
+  exp_output: False
+  lib_norm: False
+train_on_all: True
+nce_loss: False
+nce_dim: 64
+nce_temp: 1
+
+# Fine-tuning args:
+celltype_clf_loss: False # can also be used during pre-training!
+modality_prediction_loss: False
+
+cls_finetune_dim: 134 # is used for both celltype clf loss and modality prediction finetuning
+baseline_cls_task_layers: []
+
+# Fine-tuning args:
+perturb_mode: True
+pred_post_pert: False
+perturb_init_factor: 1
+baseline_perturb_dim_per_gene: 512
+baseline_perturb_bottleneck_dim: 128

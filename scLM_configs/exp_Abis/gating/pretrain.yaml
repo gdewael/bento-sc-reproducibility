@@ -1,0 +1,58 @@
+#DataModule args:
+batch_size: 192
+devices: [0, 1]
+n_workers: 12
+in_memory: False
+val_sub: True
+
+# Data processing args:
+return_zeros: False
+allow_padding: False
+input_processing:
+  - type: FilterTopGenes
+    affected_keys: ["gene_counts", "gene_index", "gene_counts_true"]
+    number: 1024
+  - type: FixedNorm
+    key: "gene_counts"
+    factor: 0.1
+  - type: LogP1
+    key: "gene_counts"
+  - type: Mask
+    p: 0.15
+    key: "gene_counts"
+  - type: Bin
+    key: "gene_counts_true"
+
+# Model args:
+discrete_input: False
+n_discrete_tokens: 29 # 50->9 , 100->13, 200->19, 500->29
+gate_input: True
+pseudoquant_input: False
+dim: 512
+depth: 10
+dropout: 0.2
+n_genes: 19331
+
+# General learning args
+lr: 3e-4
+train_on_all: False
+loss:
+  type: BinCE
+  n_bins: 29 
+
+# Pre-training args:
+nce_loss: False
+nce_dim: 64
+nce_temp: 1
+
+# Fine-tuning args:
+
+celltype_clf_loss: False # can also be used during pre-training!
+modality_prediction_loss: False
+
+cls_finetune_dim: 164 # is used for both celltype clf loss (164) and modality prediction finetuning (134)
+baseline_cls_task_layers: []
+
+perturb_mode: False
+baseline_perturb_dim_per_gene: 5
+baseline_perturb_bottleneck_dim: 100
