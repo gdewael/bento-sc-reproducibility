@@ -37,8 +37,8 @@ bentosc_pretrain ./scLM_configs/exp_A/binned/pretrain.yaml /path/to/logs_binned/
 Evaluation:
 ```bash
 # upscaling on val and test
-bentosc_task_upscale ./scLM_configs/exp_A/binned/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_file /path/to/scTab_upsc_val.h5t --clf_output True
-bentosc_task_upscale ./scLM_configs/exp_A/binned/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_file /path/to/scTab_upsc_test.h5t --clf_output True
+bentosc_task_upscale ./scLM_configs/exp_A/binned/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_path /path/to/scTab_upsc_val.h5t --clf_output True
+bentosc_task_upscale ./scLM_configs/exp_A/binned/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_path /path/to/scTab_upsc_test.h5t --clf_output True
 
 # grn infer on val and test
 bentosc_task_grninfer embed ./scLM_configs/exp_A/binned/grninfer.yaml /path/to/logs_binned/ckpt.ckpt /path/to/embeds_grn_binned_val/ --data_path /path/to/scTab_grn_val.h5t
@@ -77,8 +77,8 @@ bentosc_pretrain ./scLM_configs/exp_A/binned/pretrain.yaml /path/to/logs_binned/
 Evaluation:
 ```bash
 # upscaling on val and test
-bentosc_task_upscale ./scLM_configs/exp_D/mlm_ctclf_contr/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_file /path/to/scTab_upsc_val.h5t --clf_output False
-bentosc_task_upscale ./scLM_configs/exp_D/mlm_ctclf_contr/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_file /path/to/scTab_upsc_test.h5t --clf_output False
+bentosc_task_upscale ./scLM_configs/exp_D/mlm_ctclf_contr/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_path /path/to/scTab_upsc_val.h5t --clf_output False
+bentosc_task_upscale ./scLM_configs/exp_D/mlm_ctclf_contr/upscale.yaml /path/to/logs_binned/ckpt.ckpt --data_path /path/to/scTab_upsc_test.h5t --clf_output False
 
 # grn infer on val and test
 bentosc_task_grninfer embed ./scLM_configs/exp_D/mlm_ctclf_contr/grninfer.yaml /path/to/logs_binned/ckpt.ckpt /path/to/embeds_grn_binned_val/ --data_path /path/to/scTab_grn_val.h5t
