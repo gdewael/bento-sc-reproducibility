@@ -117,7 +117,7 @@ All baseline scripts are listed under `./baselines/`
 
 For the PCA upscaling baseline:
 ```bash
-python ./baselines/upscale/pca_upscale.py ./baselines/upscale/pca_train.yaml ./baselines/upscale/pca_test.yaml /path/to/scTab.h5t /path/to/scTab_upsc_val.h5t /path/to/scTab_upsc_val.h5t
+python ./baselines/upscale/pca_upscale.py ./baselines/upscale/pca_train.yaml ./baselines/upscale/pca_test.yaml /path/to/scTab.h5t /path/to/scTab_upsc_val.h5t /path/to/scTab_upsc_test.h5t
 ```
 
 ### GRN Inference
