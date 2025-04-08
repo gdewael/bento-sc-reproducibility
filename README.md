@@ -184,21 +184,21 @@ python ./baselines/protconc/unpretrained.py ./baselines/protconc/unpretrained.ya
 
 HVG2000:
 ```bash
-python ./baselines/batchcorr/hvg2000.py ./baselines/batchcorr/hvg2000_el.yaml /path/to/batchcorr_hvg2000_el_res.h5ad 0 2
-python ./baselines/batchcorr/hvg2000.py ./baselines/batchcorr/hvg2000_ci.yaml /path/to/batchcorr_hvg2000_ci_res.h5ad 0 2
-python ./baselines/batchcorr/hvg2000.py ./baselines/batchcorr/hvg2000_ga.yaml /path/to/batchcorr_hvg2000_ga_res.h5ad 0 3
+python ./baselines/batchcorr/hvg2000.py ./baselines/batchcorr/hvg2000_el.yaml /path/to/batchcorr_hvg2000_el_res.h5ad 0 2 --data_path /path/to/batchcorr_el.h5t
+python ./baselines/batchcorr/hvg2000.py ./baselines/batchcorr/hvg2000_ci.yaml /path/to/batchcorr_hvg2000_ci_res.h5ad 0 2 --data_path /path/to/batchcorr_ci.h5t
+python ./baselines/batchcorr/hvg2000.py ./baselines/batchcorr/hvg2000_ga.yaml /path/to/batchcorr_hvg2000_ga_res.h5ad 0 3 --data_path /path/to/batchcorr_ga.h5t
 ```
 
 HVG5000:
 ```bash
-python ./baselines/batchcorr/hvg5000.py ./baselines/batchcorr/hvg5000_el.yaml /path/to/batchcorr_hvg5000_el_res.h5ad 0 2
-python ./baselines/batchcorr/hvg5000.py ./baselines/batchcorr/hvg5000_ci.yaml /path/to/batchcorr_hvg5000_ci_res.h5ad 0 2
-python ./baselines/batchcorr/hvg5000.py ./baselines/batchcorr/hvg5000_ga.yaml /path/to/batchcorr_hvg5000_ga_res.h5ad 0 3
+python ./baselines/batchcorr/hvg5000.py ./baselines/batchcorr/hvg5000_el.yaml /path/to/batchcorr_hvg5000_el_res.h5ad 0 2 --data_path /path/to/batchcorr_el.h5t
+python ./baselines/batchcorr/hvg5000.py ./baselines/batchcorr/hvg5000_ci.yaml /path/to/batchcorr_hvg5000_ci_res.h5ad 0 2 --data_path /path/to/batchcorr_ci.h5t
+python ./baselines/batchcorr/hvg5000.py ./baselines/batchcorr/hvg5000_ga.yaml /path/to/batchcorr_hvg5000_ga_res.h5ad 0 3 --data_path /path/to/batchcorr_ga.h5t
 ```
 
 All genes (no hvg selection):
 ```bash
-python ./baselines/batchcorr/hvgall.py ./baselines/batchcorr/hvgall.yaml /path/to/batchcorr_hvgall_el_res.h5ad 0 2
-python ./baselines/batchcorr/hvgall.py ./baselines/batchcorr/hvgall.yaml /path/to/batchcorr_hvgall_ci_res.h5ad 0 2
-python ./baselines/batchcorr/hvgall.py ./baselines/batchcorr/hvgall.yaml /path/to/batchcorr_hvgall_ga_res.h5ad 0 3
+python ./baselines/batchcorr/hvgall.py ./baselines/batchcorr/hvgall.yaml /path/to/batchcorr_hvgall_el_res.h5ad 0 2 --data_path /path/to/batchcorr_el.h5t
+python ./baselines/batchcorr/hvgall.py ./baselines/batchcorr/hvgall.yaml /path/to/batchcorr_hvgall_ci_res.h5ad 0 2 --data_path /path/to/batchcorr_ci.h5t
+python ./baselines/batchcorr/hvgall.py ./baselines/batchcorr/hvgall.yaml /path/to/batchcorr_hvgall_ga_res.h5ad 0 3 --data_path /path/to/batchcorr_ga.h5t
 ```
